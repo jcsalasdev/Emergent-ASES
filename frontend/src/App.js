@@ -248,7 +248,7 @@ function HomePage() {
                   </div>
                   <div>
                     <label className="text-xs text-white/70">Phone</label>
-                    <Input value={quote.phone} onChange={e =&gt; setQuote({ ...quote, phone: e.target.value })} placeholder="09xx xxx xxxx" />
+                    <Input value={quote.phone} onChange={e => setQuote({ ...quote, phone: e.target.value })} placeholder="09xx xxx xxxx" />
                   </div>
                 </div>
                 <div>
