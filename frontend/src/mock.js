@@ -113,7 +113,7 @@ export const gallery = {
       id: "g8",
       title: "Fire Alarm Control Panel",
       category: "FDAS",
-      img: "https://images.unsplash.com/photo-1614519473079-44574d3f4389?auto=format&amp;fit=crop&amp;w=1400&amp;q=85",
+      img: "https://images.unsplash.com/photo-1614519473079-44574d3f4389?auto=format&fit=crop&w=1400&q=85",
     },
     // AC
     {
