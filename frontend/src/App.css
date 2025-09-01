@@ -1,34 +1,61 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Typography: Import clean, professional fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@600;700;800&amp;display=swap");
+
+:root {
+  --charcoal: #0f1113;
+  --charcoal-2: #14161a;
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --amber: #ffb020; /* CTA */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+html, body, #root, .App {
+  min-height: 100%;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Utility classes for decorative layers */
+.bg-hero {
+  background: radial-gradient(60% 60% at 20% 10%, rgba(255,176,32,0.12) 0%, rgba(255,176,32,0) 60%),
+              radial-gradient(40% 40% at 90% 20%, rgba(245, 245, 245, 0.06) 0%, rgba(245, 245, 245, 0) 70%),
+              linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal-2) 100%);
 }
 
-.App-link {
-    color: #61dafb;
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.brand-title {
+  font-family: Manrope, Inter, system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
+
+.brand-body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+.btn-amber {
+  background-color: var(--amber);
+  color: #111;
+  transition: background-color 200ms ease, transform 180ms ease;
+}
+.btn-amber:hover { background-color: #ffa300; transform: translateY(-1px); }
+.btn-amber:active { transform: translateY(0); }
+
+.link-underline { position: relative; }
+.link-underline::after {
+  content: "";
+  position: absolute; left: 0; bottom: -2px; height: 1px; width: 0%; background: var(--amber);
+  transition: width 200ms ease;
+}
+.link-underline:hover::after { width: 100%; }
+
+.fade-in-up { animation: fadeInUp 500ms ease both; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.shadow-soft { box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+
+/* Reset legacy template styles that centered everything */
+.App-header { all: unset; }
