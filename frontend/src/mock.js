@@ -69,7 +69,7 @@ export const gallery = {
       id: "g1",
       title: "Panel & Control Box",
       category: "Electrical",
-      img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&amp;fit=crop&amp;w=1400&amp;q=85",
+      img: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1400&q=85",
     },
     {
       id: "g2",
