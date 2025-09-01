@@ -88,7 +88,7 @@ export const gallery = {
       id: "g4",
       title: "CCTV Camera Install",
       category: "CCTV",
-      img: "https://images.unsplash.com/photo-1676630656246-3047520adfdf?auto=format&amp;fit=crop&amp;w=1400&amp;q=85",
+      img: "https://images.unsplash.com/photo-1676630656246-3047520adfdf?auto=format&fit=crop&w=1400&q=85",
     },
     {
       id: "g5",
