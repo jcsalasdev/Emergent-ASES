@@ -301,10 +301,10 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Frequency</label>
-                  <Select value={booking.frequency} onValueChange={(v) =&gt; setBooking({ ...booking, frequency: v })}>
+                  <Select value={booking.frequency} onValueChange={(v) => setBooking({ ...booking, frequency: v })}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
-                      {['Quarterly','Semi-Annual','Annual'].map(f =&gt; <SelectItem key={f} value={f}>{f}</SelectItem>)}
+                      {['Quarterly','Semi-Annual','Annual'].map(f => <SelectItem key={f} value={f}>{f}</SelectItem>)}
                     </SelectContent>
                   </Select>
                 </div>
