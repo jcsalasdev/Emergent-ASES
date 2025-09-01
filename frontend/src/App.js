@@ -312,7 +312,7 @@ function HomePage() {
               <div>
                 <label className="text-xs text-white/70">Preferred Date *</label>
                 <div className="rounded-lg border border-white/10 p-2">
-                  <Calendar mode="single" selected={booking.date} onSelect={(d) =&gt; setBooking({ ...booking, date: d })} className="rounded-md" />
+                  <Calendar mode="single" selected={booking.date} onSelect={(d) => setBooking({ ...booking, date: d })} className="rounded-md" />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
