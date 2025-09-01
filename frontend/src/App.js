@@ -253,7 +253,7 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Email</label>
-                  <Input type="email" value={quote.email} onChange={e =&gt; setQuote({ ...quote, email: e.target.value })} placeholder="you@email.com" />
+                  <Input type="email" value={quote.email} onChange={e => setQuote({ ...quote, email: e.target.value })} placeholder="you@email.com" />
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Service *</label>
