@@ -39,6 +39,23 @@ function HomePage() {
     })();
   }, []);
 
+  // Dynamic header offset for smooth anchor scroll
+  useEffect(() => {
+    const setOffset = () => {
+      const header = document.getElementById("site-header");
+      if (!header) return;
+      const h = Math.ceil(header.getBoundingClientRect().height) + 12; // +breathing room
+      document.documentElement.style.setProperty("--header-offset", `${h}px`);
+    };
+    setOffset();
+    window.addEventListener("resize", setOffset);
+    window.addEventListener("orientationchange", setOffset);
+    return () => {
+      window.removeEventListener("resize", setOffset);
+      window.removeEventListener("orientationchange", setOffset);
+    };
+  }, []);
+
   const [quote, setQuote] = useState({ name: "", email: "", phone: "", service: "", message: "" });
   const [booking, setBooking] = useState({ name: "", email: "", phone: "", date: undefined, time: "10:00 AM", notes: "", frequency: "Quarterly" });
   const [galleryFilter, setGalleryFilter] = useState("All");
@@ -80,7 +97,7 @@ function HomePage() {
   return (
     <div className="brand-body text-white bg-hero">
       {/* Top nav */}
-      <div className="sticky top-0 z-50">
+      <div id="site-header" className="sticky top-0 z-50">
         <div className="glass shadow-soft">
           <nav className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -247,21 +264,21 @@ function HomePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
                     <label className="text-xs text-white/70">Name *</label>
-                    <Input value={quote.name} onChange={e => setQuote({ ...quote, name: e.target.value })} placeholder="Full name" />
+                    <Input className="input-on-dark" value={quote.name} onChange={e => setQuote({ ...quote, name: e.target.value })} placeholder="Full name" />
                   </div>
                   <div>
                     <label className="text-xs text-white/70">Phone</label>
-                    <Input value={quote.phone} onChange={e => setQuote({ ...quote, phone: e.target.value })} placeholder="09xx xxx xxxx" />
+                    <Input className="input-on-dark" value={quote.phone} onChange={e => setQuote({ ...quote, phone: e.target.value })} placeholder="09xx xxx xxxx" />
                   </div>
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Email</label>
-                  <Input type="email" value={quote.email} onChange={e => setQuote({ ...quote, email: e.target.value })} placeholder="you@email.com" />
+                  <Input className="input-on-dark" type="email" value={quote.email} onChange={e => setQuote({ ...quote, email: e.target.value })} placeholder="you@email.com" />
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Service *</label>
                   <Select value={quote.service} onValueChange={(v) => setQuote({ ...quote, service: v })}>
-                    <SelectTrigger><SelectValue placeholder="Select a service" /></SelectTrigger>
+                    <SelectTrigger className="select-on-dark"><SelectValue placeholder="Select a service" /></SelectTrigger>
                     <SelectContent>
                       {services.map(s => <SelectItem key={s.key} value={s.title}>{s.title}</SelectItem>)}
                     </SelectContent>
@@ -269,7 +286,7 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Message</label>
-                  <Textarea rows={4} value={quote.message} onChange={e => setQuote({ ...quote, message: e.target.value })} placeholder="Tell us about your project..." />
+                  <Textarea className="textarea-on-dark" rows={4} value={quote.message} onChange={e => setQuote({ ...quote, message: e.target.value })} placeholder="Tell us about your project..." />
                 </div>
                 <div className="flex items-center justify-between gap-3">
                   <Button type="submit" className="btn-amber h-10 px-6">Submit</Button>
@@ -290,22 +307,22 @@ function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="text-xs text-white/70">Name *</label>
-                  <Input value={booking.name} onChange={e => setBooking({ ...booking, name: e.target.value })} placeholder="Full name" />
+                  <Input className="input-on-dark" value={booking.name} onChange={e => setBooking({ ...booking, name: e.target.value })} placeholder="Full name" />
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Phone</label>
-                  <Input value={booking.phone} onChange={e => setBooking({ ...booking, phone: e.target.value })} placeholder="09xx xxx xxxx" />
+                  <Input className="input-on-dark" value={booking.phone} onChange={e => setBooking({ ...booking, phone: e.target.value })} placeholder="09xx xxx xxxx" />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="text-xs text-white/70">Email</label>
-                  <Input type="email" value={booking.email} onChange={e => setBooking({ ...booking, email: e.target.value })} placeholder="you@email.com" />
+                  <Input className="input-on-dark" type="email" value={booking.email} onChange={e => setBooking({ ...booking, email: e.target.value })} placeholder="you@email.com" />
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Frequency</label>
                   <Select value={booking.frequency} onValueChange={(v) => setBooking({ ...booking, frequency: v })}>
-                    <SelectTrigger><SelectValue /></SelectTrigger>
+                    <SelectTrigger className="select-on-dark"><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {['Quarterly','Semi-Annual','Annual'].map(f => <SelectItem key={f} value={f}>{f}</SelectItem>)}
                     </SelectContent>
@@ -322,7 +339,7 @@ function HomePage() {
                 <div>
                   <label className="text-xs text-white/70">Time *</label>
                   <Select value={booking.time} onValueChange={(v) => setBooking({ ...booking, time: v })}>
-                    <SelectTrigger><SelectValue /></SelectTrigger>
+                    <SelectTrigger className="select-on-dark"><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {['9:00 AM','10:00 AM','11:00 AM','1:00 PM','2:00 PM','3:00 PM'].map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
                     </SelectContent>
@@ -330,7 +347,7 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Notes</label>
-                  <Input value={booking.notes} onChange={e => setBooking({ ...booking, notes: e.target.value })} placeholder="e.g., panel cleaning, thermal scan" />
+                  <Input className="input-on-dark" value={booking.notes} onChange={e => setBooking({ ...booking, notes: e.target.value })} placeholder="e.g., panel cleaning, thermal scan" />
                 </div>
               </div>
               <div>
