@@ -318,10 +318,10 @@ function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="text-xs text-white/70">Time *</label>
-                  <Select value={booking.time} onValueChange={(v) =&gt; setBooking({ ...booking, time: v })}>
+                  <Select value={booking.time} onValueChange={(v) => setBooking({ ...booking, time: v })}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>
-                      {['9:00 AM','10:00 AM','11:00 AM','1:00 PM','2:00 PM','3:00 PM'].map(t =&gt; <SelectItem key={t} value={t}>{t}</SelectItem>)}
+                      {['9:00 AM','10:00 AM','11:00 AM','1:00 PM','2:00 PM','3:00 PM'].map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
                     </SelectContent>
                   </Select>
                 </div>
