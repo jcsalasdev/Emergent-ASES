@@ -266,7 +266,7 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Message</label>
-                  <Textarea rows={4} value={quote.message} onChange={e =&gt; setQuote({ ...quote, message: e.target.value })} placeholder="Tell us about your project..." />
+                  <Textarea rows={4} value={quote.message} onChange={e => setQuote({ ...quote, message: e.target.value })} placeholder="Tell us about your project..." />
                 </div>
                 <div className="flex items-center justify-between gap-3">
                   <Button type="submit" className="btn-amber h-10 px-6">Submit</Button>
