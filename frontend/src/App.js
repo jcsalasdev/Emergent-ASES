@@ -291,7 +291,7 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Phone</label>
-                  <Input value={booking.phone} onChange={e =&gt; setBooking({ ...booking, phone: e.target.value })} placeholder="09xx xxx xxxx" />
+                  <Input value={booking.phone} onChange={e => setBooking({ ...booking, phone: e.target.value })} placeholder="09xx xxx xxxx" />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
