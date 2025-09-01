@@ -327,7 +327,7 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Notes</label>
-                  <Input value={booking.notes} onChange={e =&gt; setBooking({ ...booking, notes: e.target.value })} placeholder="e.g., panel cleaning, thermal scan" />
+                  <Input value={booking.notes} onChange={e => setBooking({ ...booking, notes: e.target.value })} placeholder="e.g., panel cleaning, thermal scan" />
                 </div>
               </div>
               <div>
