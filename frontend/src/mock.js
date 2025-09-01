@@ -75,7 +75,7 @@ export const gallery = {
       id: "g2",
       title: "Licensed Electrician Onsite",
       category: "Electrical",
-      img: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&amp;fit=crop&amp;w=1400&amp;q=85",
+      img: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&w=1400&q=85",
     },
     {
       id: "g3",
