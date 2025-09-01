@@ -4,6 +4,8 @@ export const COMPANY = {
   phone: "0927-314-9813",
 };
 
+export const SERVICE_AREA = "Philippines";
+
 export const services = [
   {
     key: "electrical-systems",

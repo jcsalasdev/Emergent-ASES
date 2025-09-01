@@ -23,7 +23,8 @@ import { Toaster } from "@/components/ui/sonner";
 // icons
 import { PhoneCall, Mail, Zap, AlarmSmoke, Flashlight, Megaphone, Camera, Wrench, Fan, PencilRuler, CircuitBoard, Star } from "lucide-react";
 
-import { COMPANY, services, gallery, testimonials, certifications, faqs } from "./mock";
+import { COMPANY, SERVICE_AREA, services, gallery, testimonials, certifications, faqs } from "./mock";
+import { MobileCTA } from "./components/MobileCTA";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -96,7 +97,8 @@ function HomePage() {
               <a href="#faq" className="link-underline">FAQ</a>
               <a href="#contact" className="link-underline">Contact</a>
             </div>
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-3">
+              <div className="hidden lg:flex items-center rounded-full px-3 py-1 text-xs border border-white/15 bg-white/5 text-white/70">Serving {SERVICE_AREA}</div>
               <Button asChild className="btn-amber h-9 px-4">
                 <a href="#quote">Request a Quote</a>
               </Button>
@@ -130,6 +132,7 @@ function HomePage() {
                 <a href={`tel:${COMPANY.phone}`} className="flex items-center gap-2"><PhoneCall size={18}/> Call Now</a>
               </Button>
             </div>
+            <div className="mt-3 inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/80">Serving {SERVICE_AREA}</div>
             <div className="mt-6 flex items-center gap-4 text-white/70 text-sm">
               <div className="flex items-center gap-1"><Mail size={16}/> <a href={`mailto:${COMPANY.email}`} className="underline-offset-4 hover:underline">{COMPANY.email}</a></div>
               <div className="flex items-center gap-1"><PhoneCall size={16}/> {COMPANY.phone}</div>
@@ -371,7 +374,7 @@ function HomePage() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div>
                 <div className="brand-title text-xl font-extrabold">Ready to start?</div>
-                <div className="text-white/70">Call us or send your plans for fast pricing.</div>
+                <div className="text-white/70">Serving nationwide in the {SERVICE_AREA}. Call us or send your plans for fast pricing.</div>
               </div>
               <div className="flex gap-3 flex-wrap">
                 <Button asChild className="btn-amber h-11 px-6"><a href="#quote">Request a Quote</a></Button>
@@ -389,6 +392,7 @@ function HomePage() {
       </footer>
 
       <Toaster richColors position="top-center" />
+      <MobileCTA />
     </div>
   );
 }
