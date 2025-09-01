@@ -235,7 +235,7 @@ function HomePage() {
             <h2 className="brand-title text-2xl md:text-3xl font-extrabold">Request a Quote</h2>
             <p className="text-white/70 mt-2 max-w-prose">Share your scope or upload plans later. We can schedule a site visit and get you a price fast.</p>
             <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/70">
-              {services.slice(0,6).map(s =&gt; <div key={s.key} className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-amber-400" /> {s.title}</div>)}
+              {services.slice(0,6).map(s => <div key={s.key} className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-amber-400" /> {s.title}</div>)}
             </div>
           </div>
           <Card className="glass border-white/10">
