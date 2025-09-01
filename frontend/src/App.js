@@ -341,7 +341,7 @@ function HomePage() {
               <li>• Thermal scanning and load balancing checks</li>
               <li>• Panel tightening & cleaning</li>
               <li>• FDAS device tests and reports</li>
-              <li>• CCTV camera health check &amp; recording verification</li>
+              <li>• CCTV camera health check & recording verification</li>
               <li>• BGM/PA system sweep and calibration</li>
             </ul>
             <div className="mt-6 text-white/60 text-sm">Need urgent support? Call us at <a className="underline underline-offset-4" href={`tel:${COMPANY.phone}`}>{COMPANY.phone}</a></div>
