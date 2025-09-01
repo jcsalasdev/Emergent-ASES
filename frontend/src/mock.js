@@ -100,7 +100,7 @@ export const gallery = {
       id: "g6",
       title: "Wall Camera Setup",
       category: "CCTV",
-      img: "https://images.unsplash.com/photo-1686678652918-8b235f8b9415?auto=format&amp;fit=crop&amp;w=1400&amp;q=85",
+      img: "https://images.unsplash.com/photo-1686678652918-8b235f8b9415?auto=format&fit=crop&w=1400&q=85",
     },
     // FDAS
     {
