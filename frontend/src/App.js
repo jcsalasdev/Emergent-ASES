@@ -257,10 +257,10 @@ function HomePage() {
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Service *</label>
-                  <Select value={quote.service} onValueChange={(v) =&gt; setQuote({ ...quote, service: v })}>
+                  <Select value={quote.service} onValueChange={(v) => setQuote({ ...quote, service: v })}>
                     <SelectTrigger><SelectValue placeholder="Select a service" /></SelectTrigger>
                     <SelectContent>
-                      {services.map(s =&gt; <SelectItem key={s.key} value={s.title}>{s.title}</SelectItem>)}
+                      {services.map(s => <SelectItem key={s.key} value={s.title}>{s.title}</SelectItem>)}
                     </SelectContent>
                   </Select>
                 </div>
