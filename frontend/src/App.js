@@ -339,7 +339,7 @@ function HomePage() {
             <h3 className="brand-title text-xl font-extrabold">What's included in PM?</h3>
             <ul className="mt-4 space-y-2 text-white/80 text-sm">
               <li>• Thermal scanning and load balancing checks</li>
-              <li>• Panel tightening &amp; cleaning</li>
+              <li>• Panel tightening & cleaning</li>
               <li>• FDAS device tests and reports</li>
               <li>• CCTV camera health check &amp; recording verification</li>
               <li>• BGM/PA system sweep and calibration</li>
