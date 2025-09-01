@@ -1,5 +1,5 @@
 /* Typography: Import clean, professional fonts */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Manrope:wght@600;700;800&amp;display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap");
 
 :root {
   --charcoal: #0f1113;
@@ -12,6 +12,10 @@
 html, body, #root, .App {
   min-height: 100%;
 }
+
+/* Smooth scrolling + anchor offset for sticky header */
+html { scroll-behavior: smooth; }
+.anchor-offset { scroll-margin-top: 84px; }
 
 /* Utility classes for decorative layers */
 .bg-hero {

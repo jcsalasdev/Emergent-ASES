@@ -153,7 +153,7 @@ function HomePage() {
       </header>
 
       {/* Certifications */}
-      <section id="certs" className="mx-auto max-w-7xl px-6 py-8 md:py-12">
+      <section id="certs" className="anchor-offset mx-auto max-w-7xl px-6 py-8 md:py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {certifications.map((c) => (
             <div key={c.name} className="glass rounded-xl px-4 py-3 text-center border-white/10">
@@ -165,7 +165,7 @@ function HomePage() {
       </section>
 
       {/* Services */}
-      <section id="services" className="mx-auto max-w-7xl px-6 py-10 md:py-16">
+      <section id="services" className="anchor-offset mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="max-w-2xl">
           <h2 className="brand-title text-2xl md:text-3xl font-extrabold">Professional Services</h2>
           <p className="text-white/70 mt-2">Single contractor, multiple disciplines — coordinated delivery.</p>
@@ -189,7 +189,7 @@ function HomePage() {
       </section>
 
       {/* Project Gallery */}
-      <section id="gallery" className="mx-auto max-w-7xl px-6 py-10 md:py-16">
+      <section id="gallery" className="anchor-offset mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <h2 className="brand-title text-2xl md:text-3xl font-extrabold">Recent Projects</h2>
@@ -214,7 +214,7 @@ function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="mx-auto max-w-7xl px-6 py-10 md:py-16">
+      <section id="testimonials" className="anchor-offset mx-auto max-w-7xl px-6 py-10 md:py-16">
         <h2 className="brand-title text-2xl md:text-3xl font-extrabold">What Clients Say</h2>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {testimonials.map((t, idx) => (
@@ -232,7 +232,7 @@ function HomePage() {
       </section>
 
       {/* Quote Form */}
-      <section id="quote" className="mx-auto max-w-7xl px-6 py-10 md:py-16">
+      <section id="quote" className="anchor-offset mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="brand-title text-2xl md:text-3xl font-extrabold">Request a Quote</h2>
@@ -282,7 +282,7 @@ function HomePage() {
       </section>
 
       {/* Preventive Maintenance Booking */}
-      <section id="maintenance" className="mx-auto max-w-7xl px-6 py-10 md:py-16">
+      <section id="maintenance" className="anchor-offset mx-auto max-w-7xl px-6 py-10 md:py-16">
         <h2 className="brand-title text-2xl md:text-3xl font-extrabold">Book Preventive Maintenance</h2>
         <div className="mt-6 grid md:grid-cols-2 gap-8">
           <Card className="glass border-white/10">
@@ -353,7 +353,7 @@ function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-3xl px-6 py-10 md:py-16">
+      <section id="faq" className="anchor-offset mx-auto max-w-3xl px-6 py-10 md:py-16">
         <h2 className="brand-title text-2xl md:text-3xl font-extrabold text-center md:text-left">FAQ</h2>
         <div className="mt-4 glass rounded-xl border border-white/10">
           <Accordion type="single" collapsible className="w-full">
@@ -368,7 +368,7 @@ function HomePage() {
       </section>
 
       {/* Contact/Footer */}
-      <footer id="contact" className="relative mt-8">
+      <footer id="contact" className="anchor-offset relative mt-8">
         <div className="mx-auto max-w-7xl px-6 py-10">
           <div className="glass rounded-2xl border border-white/10 p-6 md:p-8">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
