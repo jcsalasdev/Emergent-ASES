@@ -218,7 +218,7 @@ function HomePage() {
             <Card key={idx} className="glass border-white/10">
               <CardHeader>
                 <div className="flex gap-1 text-amber-400">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill={i &lt; 5 ? '#ffb020' : 'transparent'} color="#ffb020" />)}
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill={i < 5 ? '#ffb020' : 'transparent'} color="#ffb020" />)}
                 </div>
                 <CardTitle className="text-base text-white/90">{t.quote}</CardTitle>
                 <CardDescription className="text-white/60">{t.name} • {t.role}</CardDescription>
