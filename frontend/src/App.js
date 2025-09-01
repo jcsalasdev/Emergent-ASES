@@ -244,7 +244,7 @@ function HomePage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
                     <label className="text-xs text-white/70">Name *</label>
-                    <Input value={quote.name} onChange={e =&gt; setQuote({ ...quote, name: e.target.value })} placeholder="Full name" />
+                    <Input value={quote.name} onChange={e => setQuote({ ...quote, name: e.target.value })} placeholder="Full name" />
                   </div>
                   <div>
                     <label className="text-xs text-white/70">Phone</label>
