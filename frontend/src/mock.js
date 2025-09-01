@@ -81,7 +81,7 @@ export const gallery = {
       id: "g3",
       title: "Fuse Box Wiring",
       category: "Electrical",
-      img: "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&amp;fit=crop&amp;w=1400&amp;q=85",
+      img: "https://images.unsplash.com/photo-1635335874521-7987db781153?auto=format&fit=crop&w=1400&q=85",
     },
     // CCTV
     {
