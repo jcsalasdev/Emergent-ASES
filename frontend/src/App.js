@@ -297,7 +297,7 @@ function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="text-xs text-white/70">Email</label>
-                  <Input type="email" value={booking.email} onChange={e =&gt; setBooking({ ...booking, email: e.target.value })} placeholder="you@email.com" />
+                  <Input type="email" value={booking.email} onChange={e => setBooking({ ...booking, email: e.target.value })} placeholder="you@email.com" />
                 </div>
                 <div>
                   <label className="text-xs text-white/70">Frequency</label>
