@@ -15,7 +15,7 @@ html, body, #root, .App {
 }
 
 /* Smooth scrolling + anchor offset for sticky header */
-html { scroll-behavior: smooth; }
+/* html { scroll-behavior: smooth; } */
 .anchor-offset { scroll-margin-top: var(--header-offset, 84px); }
 
 /* Form fields readability on dark backgrounds */
@@ -37,7 +37,7 @@ html { scroll-behavior: smooth; }
 
 .select-on-dark {
   background-color: rgba(255,255,255,0.05) !important;
-  color: #fff !important;
+  color:#fff !important;
   border-color: rgba(255,255,255,0.28) !important;
 }
 .select-on-dark[data-placeholder] { color: rgba(255,255,255,0.72); }
