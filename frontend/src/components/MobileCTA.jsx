@@ -11,7 +11,7 @@ export const MobileCTA = () => {
           <Button asChild className="btn-amber h-11 flex-1">
             <a href="#quote">Request a Quote</a>
           </Button>
-          <Button asChild variant="outline" className="h-11 px-4 border-white/20 text-white hover:bg-white/10">
+          <Button asChild variant="outline" className="h-11 px-4 border-white/20 text-white hover:bg-white/10 hover:text-white">
             <a href={`tel:${COMPANY.phone}`} className="flex items-center gap-2"><PhoneCall size={18}/> Call</a>
           </Button>
         </div>

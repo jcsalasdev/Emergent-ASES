@@ -6,7 +6,7 @@
   --charcoal-2: #14161a;
   --glass: rgba(255, 255, 255, 0.06);
   --glass-border: rgba(255, 255, 255, 0.12);
-  --amber: #ffb020; /* CTA */
+  --amber: #3d78f7; /* CTA */
   --header-offset: 84px;
 }
 
@@ -71,7 +71,7 @@ html, body, #root, .App {
   color: #111;
   transition: background-color 200ms ease, transform 180ms ease;
 }
-.btn-amber:hover { background-color: #ffa300; transform: translateY(-1px); }
+.btn-amber:hover { border: 2px solid var(--amber); color: var(--amber); background-color: var(--charcoal); transform: translateY(-1px); }
 .btn-amber:active { transform: translateY(0); }
 
 .link-underline { position: relative; }

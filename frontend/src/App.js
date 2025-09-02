@@ -143,7 +143,13 @@ function HomePage() {
         <div className="glass shadow-soft">
           <nav className="mx-auto max-w-7xl px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-9 w-9 rounded-md bg-white/10 grid place-items-center text-amber-400 font-bold">AS</div>
+          <div className="h-9 w-10 rounded-md bg-white/10 grid place-items-center overflow-hidden">
+            <img 
+              src="https://i.postimg.cc/8kB58TDZ/Blue-and-White-Electrical-Services-Logo-2.png" 
+              alt="Logo" 
+              className="h-full w-full object-contain"
+            />
+          </div>
               <div>
                 <div className="brand-title text-base sm:text-lg font-extrabold">{COMPANY.name}</div>
                 <div className="text-xs text-white/70 -mt-0.5">Electrical • FDAS • CCTV • Design</div>
@@ -235,10 +241,10 @@ function HomePage() {
             return (
               <Card key={s.key} className="glass border-white/10">
                 <CardHeader className="flex flex-row items-center gap-3 pb-2">
-                  <div className="h-10 w-10 rounded-lg bg-amber-400/15 text-amber-400 grid place-items-center">
+                  <div className="h-10 w-10 rounded-lg bg-[#3d78f7]/15 text-[#3d78f7] grid place-items-center">
                     <Icon size={20} />
                   </div>
-                  <CardTitle className="brand-title text-lg font-extrabold text-amber-400">{s.title}</CardTitle>
+                  <CardTitle className="brand-title text-lg font-extrabold text-[#3d78f7]">{s.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-white/70 text-sm">{s.desc}</CardContent>
               </Card>
@@ -256,7 +262,7 @@ function HomePage() {
           </div>
           <div className="flex gap-2 flex-wrap">
             {gallery.categories.map((c) => (
-              <Button key={c} variant="outline" className={`h-9 px-3 border-white/15 text-sm ${galleryFilter===c ? 'bg-white/15' : 'bg-transparent hover:bg-white/10 hover:text-amber-400' } text-white`} onClick={() => setGalleryFilter(c)}>
+              <Button key={c} variant="outline" className={`h-9 px-3 border-white/15 text-sm ${galleryFilter===c ? 'bg-white/15' : 'bg-transparent hover:bg-white/10 hover:text-[#3d78f7]' } text-white`} onClick={() => setGalleryFilter(c)}>
                 {c}
               </Button>
             ))}
@@ -279,8 +285,8 @@ function HomePage() {
           {testimonials.map((t, idx) => (
             <Card key={idx} className="glass border-white/10">
               <CardHeader>
-                <div className="flex gap-1 text-amber-400">
-                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill={i < 5 ? '#ffb020' : 'transparent'} color="#ffb020" />)}
+                <div className="flex gap-1 text-[#3d78f7]">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} fill={i < 5 ? '#3d78f7' : 'transparent'} color="#3d78f7" />)}
                 </div>
                 <CardTitle className="text-base text-white/90">{t.quote}</CardTitle>
                 <CardDescription className="text-white/60">{t.name} • {t.role}</CardDescription>
@@ -297,7 +303,7 @@ function HomePage() {
             <h2 className="brand-title text-2xl md:text-3xl font-extrabold">Request a Quote</h2>
             <p className="text-white/70 mt-2 max-w-prose">Share your scope or upload plans later. We can schedule a site visit and get you a price fast.</p>
             <div className="mt-6 grid grid-cols-2 gap-3 text-sm text-white/70">
-              {services.slice(0,6).map(s => <div key={s.key} className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-amber-400" /> {s.title}</div>)}
+              {services.slice(0,6).map(s => <div key={s.key} className="flex items-center gap-2"><div className="h-1.5 w-1.5 rounded-full bg-[#3d78f7]" /> {s.title}</div>)}
             </div>
           </div>
           <Card className="glass border-white/10">
