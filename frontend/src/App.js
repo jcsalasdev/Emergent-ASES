@@ -32,9 +32,8 @@ const API = `${BACKEND_URL}/api`;
 const icons = { Zap, AlarmSmoke, Flashlight, Megaphone, Camera, Wrench, Fan, PencilRuler, CircuitBoard };
 
 function HomePage() {
-  // Ping backend hello (only if backend URL exists, skipped on GitHub Pages)
+  // Ping backend hello
   useEffect(() => {
-    if (!BACKEND_URL) return;
     (async () => {
       try { await axios.get(`${API}/`); } catch (e) { /* ignore */ }
     })();
@@ -56,6 +55,48 @@ function HomePage() {
       window.removeEventListener("orientationchange", setOffset);
     };
   }, []);
+
+    // Smooth scrolling to anchor links (2s duration)
+  useEffect(() => {
+    const handleSmoothScroll = (e) => {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (!anchor) return;
+
+      const targetId = anchor.getAttribute("href").slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (!targetEl) return;
+
+      e.preventDefault();
+
+      const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-offset')) || 0;
+      const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - headerOffset;
+
+      const duration = 1000; 
+      const start = window.pageYOffset;
+      const distance = offsetPosition - start;
+      let startTime = null;
+
+      const easeInOutQuad = (t) => t < 0.5
+        ? 2 * t * t
+        : -1 + (4 - 2 * t) * t;
+
+      const animation = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const run = start + distance * easeInOutQuad(progress);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      };
+
+      requestAnimationFrame(animation);
+    };
+
+    document.addEventListener("click", handleSmoothScroll);
+    return () => document.removeEventListener("click", handleSmoothScroll);
+  }, []);
+
 
   const [quote, setQuote] = useState({ name: "", email: "", phone: "", service: "", message: "" });
   const [booking, setBooking] = useState({ name: "", email: "", phone: "", date: undefined, time: "10:00 AM", notes: "", frequency: "Quarterly" });
@@ -159,8 +200,8 @@ function HomePage() {
           {/* Collage */}
           <div className="relative">
             <div className="absolute -top-10 -right-10 -z-10 h-72 w-72 rounded-full opacity-30" style={{ background: "radial-gradient(circle, rgba(255,176,32,0.25) 0%, rgba(255,176,32,0) 60%)" }}></div>
-            <div className="grid grid-cols-3 grid-rows-3 gap-3">
-              {gallery.items.slice(0,6).map((g, idx) => (
+            <div className="grid grid-cols-3 grid-rows-2 gap-3">
+              {gallery.items.slice(0,5).map((g, idx) => (
                 <div key={g.id} className={`overflow-hidden rounded-xl glass shadow-soft ${idx % 5 === 0 ? 'row-span-2' : 'row-span-1'}`}>
                   <img src={g.img} alt={g.title} className="h-full w-full object-cover transition-transform duration-300 ease-out will-change-transform hover:scale-105" />
                 </div>
@@ -197,7 +238,7 @@ function HomePage() {
                   <div className="h-10 w-10 rounded-lg bg-amber-400/15 text-amber-400 grid place-items-center">
                     <Icon size={20} />
                   </div>
-                  <CardTitle className="brand-title text-lg font-extrabold">{s.title}</CardTitle>
+                  <CardTitle className="brand-title text-lg font-extrabold text-amber-400">{s.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-white/70 text-sm">{s.desc}</CardContent>
               </Card>
@@ -215,7 +256,7 @@ function HomePage() {
           </div>
           <div className="flex gap-2 flex-wrap">
             {gallery.categories.map((c) => (
-              <Button key={c} variant="outline" className={`h-9 px-3 border-white/15 text-sm ${galleryFilter===c ? 'bg-white/15' : 'bg-transparent hover:bg-white/10'} text-white`} onClick={() => setGalleryFilter(c)}>
+              <Button key={c} variant="outline" className={`h-9 px-3 border-white/15 text-sm ${galleryFilter===c ? 'bg-white/15' : 'bg-transparent hover:bg-white/10 hover:text-amber-400' } text-white`} onClick={() => setGalleryFilter(c)}>
                 {c}
               </Button>
             ))}
@@ -371,8 +412,8 @@ function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="anchor-offset mx-auto max-w-3xl px-6 py-10 md:py-16">
-        <h2 className="brand-title text-2xl md:text-3xl font-extrabold text-center md:text-left">FAQ</h2>
+      <section id="faq" className="anchor-offset mx-auto max-w-4xl px-6 py-10 md:py-16">
+        <h2 className="brand-title text-2xl md:text-3xl font-extrabold text-center md:text-center">FAQ</h2>
         <div className="mt-4 glass rounded-xl border border-white/10">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((f, i) => (
